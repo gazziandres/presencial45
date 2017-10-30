@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Ejercicio4</title>
+  </head>
+  <body>
+      <h1 id="bomb">The bomb has been planted</h1>
+      <h2 id="timer"> 15 </h2>
+          <script>
+                var timer_tag = document.getElementById('timer');
+                var timer = timer_tag.innerHTML;
+                timer = parseInt(timer);
+                var b = document.getElementById('bomb')
+                var t = setInterval(function(){
+                  timer = timer - 1
+                  timer_tag.innerHTML = timer
+                    if (timer == 0){
+                      b.innerHTML = 'Terrorists Win'
+                      document.body.style.background = 'red'
+                      clearInterval(t);
+                    }
+                }, 1000);
+          </script>
+  </body>
+</html>
